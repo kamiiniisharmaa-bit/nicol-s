@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aurexon · Terms & Conditions</title>
+  <!-- Google Font & Font Awesome -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #faf9f8;
+      color: #1e1e1e;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ---- HEADER / NAV (consistent) ---- */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 0;
+      border-bottom: 1px solid #eaeaea;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: #0a0a0a;
+    }
+    .logo span {
+      background: #1e1e1e;
+      color: #faf9f8;
+      padding: 0 8px;
+      border-radius: 30px;
+      font-weight: 600;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      font-weight: 500;
+      font-size: 0.95rem;
+    }
+    .nav-links a {
+      text-decoration: none;
+      color: #2b2b2b;
+      transition: 0.2s;
+    }
+    .nav-links a:hover {
+      color: #000;
+      border-bottom: 2px solid #000;
+      padding-bottom: 4px;
+    }
+
+    .nav-actions {
+      display: flex;
+      gap: 20px;
+      font-size: 1.2rem;
+    }
+    .nav-actions i {
+      cursor: pointer;
+      transition: 0.2s;
+    }
+    .nav-actions i:hover {
+      transform: scale(1.08);
+      color: #000;
+    }
+
+    /* ---- TERMS PAGE SPECIFIC ---- */
+    .terms-header {
+      padding: 40px 0 16px;
+    }
+    .terms-header h1 {
+      font-size: 2.8rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+    .terms-header h1 i {
+      color: #d4a373;
+      margin-right: 12px;
+    }
+    .terms-header p {
+      color: #5a5a5a;
+      margin-top: 8px;
+      font-size: 1rem;
+      border-left: 4px solid #d4a373;
+      padding-left: 18px;
+      background: #f4f2ef;
+      border-radius: 0 40px 40px 0;
+      padding: 12px 20px;
+      max-width: 600px;
+    }
+
+    .terms-card {
+      background: white;
+      border-radius: 40px;
+      padding: 40px 44px;
+      margin: 20px 0 50px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.02);
+      border: 1px solid #f0efed;
+    }
+
+    .terms-card h2 {
+      font-size: 1.6rem;
+      font-weight: 600;
+      margin-top: 32px;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      border-bottom: 2px solid #eaeaea;
+      padding-bottom: 10px;
+    }
+    .terms-card h2:first-of-type {
+      margin-top: 0;
+    }
+    .terms-card h2 i {
+      color: #1e1e1e;
+      font-size: 1.4rem;
+      width: 32px;
+    }
+
+    .terms-card p {
+      margin-bottom: 16px;
+      color: #2e2e2e;
+      font-weight: 400;
+    }
+    .terms-card ul {
+      margin: 12px 0 20px 24px;
+      list-style: none;
+    }
+    .terms-card ul li {
+      margin-bottom: 10px;
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+    }
+    .terms-card ul li i {
+      color: #1e1e1e;
+      width: 20px;
+      font-size: 0.9rem;
+      opacity: 0.6;
+    }
+
+    .highlight-box {
+      background: #f8f6f3;
+      border-radius: 30px;
+      padding: 24px 30px;
+      margin: 28px 0 10px;
+      border-left: 6px solid #1e1e1e;
+    }
+    .highlight-box i {
+      margin-right: 12px;
+      color: #1e1e1e;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin: 10px 0 40px;
+      font-weight: 600;
+      text-decoration: none;
+      color: #1e1e1e;
+      border: 2px solid #1e1e1e;
+      padding: 12px 28px;
+      border-radius: 60px;
+      transition: 0.2s;
+    }
+    .back-link i {
+      margin-right: 10px;
+    }
+    .back-link:hover {
+      background: #1e1e1e;
+      color: white;
+    }
+
+    /* ---- FOOTER (consistent) ---- */
+    .footer-links {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      padding: 20px 0 30px;
+      border-top: 1px solid #e0ddd8;
+      font-size: 0.9rem;
+      color: #3d3d3d;
+    }
+    .footer-links div {
+      display: flex;
+      gap: 30px;
+    }
+    .footer-links a {
+      text-decoration: none;
+      color: #3d3d3d;
+    }
+    .footer-links a:hover {
+      color: #000;
+      text-decoration: underline;
+    }
+    .footer-copy {
+      text-align: center;
+      padding: 20px 0 10px;
+      color: #888;
+      font-size: 0.8rem;
+    }
+
+    /* responsive */
+    @media (max-width: 700px) {
+      .navbar {
+        flex-direction: column;
+        gap: 16px;
+        align-items: flex-start;
+      }
+      .nav-links {
+        gap: 20px;
+        flex-wrap: wrap;
+      }
+      .terms-card {
+        padding: 24px 20px;
+      }
+      .terms-header h1 {
+        font-size: 2.2rem;
+      }
+      .footer-links {
+        flex-direction: column;
+        gap: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+
+  <!-- NAVBAR (exactly as home) -->
+  <nav class="navbar">
+    <div class="logo">Aurexon<span>.</span></div>
+    <div class="nav-links">
+    <a href="index.html">Home</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+      <a href="about.html">About Us</a>
+    </div>
+    <div class="nav-actions">
+      <i class="fas fa-search"></i>
+      <i class="fas fa-heart"></i>
+      <i class="fas fa-shopping-bag"></i>
+    </div>
+  </nav>
+
+  <!-- TERMS PAGE -->
+  <div class="terms-header">
+    <h1><i class="fas fa-gavel"></i> Terms & Conditions</h1>
+    <p><i class="fas fa-handshake" style="margin-right: 8px;"></i> Last updated: June 2026 — Aurexon is built on transparency and trust.</p>
+  </div>
+
+  <div class="terms-card">
+    <h2><i class="fas fa-file-contract"></i> 1. General</h2>
+    <p>Welcome to Aurexon. By using our website and purchasing our products, you agree to comply with and be bound by the following terms. Please read them carefully. If you do not agree to these terms, please do not use this site.</p>
+
+    <h2><i class="fas fa-shopping-cart"></i> 2. Orders & Payments</h2>
+    <ul>
+      <li><i class="fas fa-check-circle"></i> All orders are subject to acceptance and availability.</li>
+      <li><i class="fas fa-check-circle"></i> Prices are displayed in USD and include applicable taxes.</li>
+      <li><i class="fas fa-check-circle"></i> We accept major credit cards, PayPal, and Apple Pay.</li>
+      <li><i class="fas fa-check-circle"></i> Payment is processed securely; we do not store your payment details.</li>
+    </ul>
+
+    <h2><i class="fas fa-truck"></i> 3. Shipping & Delivery</h2>
+    <ul>
+      <li><i class="fas fa-check-circle"></i> We offer free standard shipping on orders over $75.</li>
+      <li><i class="fas fa-check-circle"></i> Estimated delivery times are provided at checkout.</li>
+      <li><i class="fas fa-check-circle"></i> Once shipped, you will receive a tracking number via email.</li>
+    </ul>
+
+    <div class="highlight-box">
+      <i class="fas fa-rotate-left fa-lg"></i> <strong>30-day return policy</strong> — if you’re not satisfied, return your item within 30 days for a full refund. <a href="#" style="color: #1e1e1e; font-weight: 600;">Learn more</a>
+    </div>
+
+    <h2><i class="fas fa-shield-alt"></i> 4. Returns & Refunds</h2>
+    <p>Products must be returned in original condition with tags attached. Refunds are processed within 7 business days after we receive the return. Shipping costs for returns are covered by Aurexon for defective items.</p>
+
+    <h2><i class="fas fa-lock"></i> 5. Privacy & Security</h2>
+    <p>Your privacy is important to us. We collect only the information necessary to process your order and improve your experience. We do not sell or share your data with third parties. For more details, see our <a href="#" style="color: #000; font-weight: 600;">Privacy Policy</a>.</p>
+
+    <h2><i class="fas fa-copyright"></i> 6. Intellectual Property</h2>
+    <p>All content on this site — including images, text, logos, and designs — is the property of Aurexon and protected by copyright laws. You may not reproduce, distribute, or use any content without explicit written permission.</p>
+
+    <h2><i class="fas fa-scale-balanced"></i> 7. Governing Law</h2>
+    <p>These terms are governed by the laws of the State of California, without regard to conflict of law principles. Any disputes will be resolved in the courts of San Francisco, CA.</p>
+
+    <h2><i class="fas fa-envelope"></i> 8. Contact</h2>
+    <p>If you have any questions about these Terms, please reach out to us at <strong>support@Aurexon.com</strong> or through our <a href="#" style="color: #000; font-weight: 600;">contact page</a>.</p>
+  </div>
+
+  <!-- back to home (optional but nice) -->
+  <a href="#" class="back-link"><i class="fas fa-arrow-left"></i> Back to Aurexon</a>
+
+  <!-- FOOTER -->
+  <div class="footer-links">
+    <div>
+      <a href="#">About</a>
+      <a href="#">Stores</a>
+      <a href="#">Careers</a>
+      <a href="#">Contact</a>
+      <a href="#" style="font-weight: 600;">Terms</a>
+    </div>
+    <div>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="#"><i class="fab fa-youtube"></i></a>
+    </div>
+  </div>
+  <div class="footer-copy">
+    &copy; 2026 Aurexon — terms page with working imagery & clean layout.
+  </div>
+
+</div> <!-- container -->
+
+</body>
+</html>

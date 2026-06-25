@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aurexon · About</title>
+  <!-- Google Font & Font Awesome -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #faf9f8;
+      color: #1e1e1e;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ---- HEADER / NAV (consistent) ---- */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 0;
+      border-bottom: 1px solid #eaeaea;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: #0a0a0a;
+    }
+    .logo span {
+      background: #1e1e1e;
+      color: #faf9f8;
+      padding: 0 8px;
+      border-radius: 30px;
+      font-weight: 600;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      font-weight: 500;
+      font-size: 0.95rem;
+    }
+    .nav-links a {
+      text-decoration: none;
+      color: #2b2b2b;
+      transition: 0.2s;
+    }
+    .nav-links a:hover {
+      color: #000;
+      border-bottom: 2px solid #000;
+      padding-bottom: 4px;
+    }
+
+    .nav-actions {
+      display: flex;
+      gap: 20px;
+      font-size: 1.2rem;
+    }
+    .nav-actions i {
+      cursor: pointer;
+      transition: 0.2s;
+    }
+    .nav-actions i:hover {
+      transform: scale(1.08);
+      color: #000;
+    }
+
+    /* ---- ABOUT PAGE SPECIFIC ---- */
+    .about-header {
+      padding: 40px 0 16px;
+    }
+    .about-header h1 {
+      font-size: 2.8rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+    .about-header h1 i {
+      color: #d4a373;
+      margin-right: 12px;
+    }
+    .about-header p {
+      color: #5a5a5a;
+      margin-top: 8px;
+      font-size: 1rem;
+      border-left: 4px solid #d4a373;
+      padding-left: 18px;
+      background: #f4f2ef;
+      border-radius: 0 40px 40px 0;
+      padding: 12px 20px;
+      max-width: 600px;
+    }
+
+    .about-card {
+      background: white;
+      border-radius: 40px;
+      padding: 40px 44px;
+      margin: 20px 0 50px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.02);
+      border: 1px solid #f0efed;
+    }
+
+    .about-card h2 {
+      font-size: 1.6rem;
+      font-weight: 600;
+      margin-top: 32px;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      border-bottom: 2px solid #eaeaea;
+      padding-bottom: 10px;
+    }
+    .about-card h2:first-of-type {
+      margin-top: 0;
+    }
+    .about-card h2 i {
+      color: #1e1e1e;
+      font-size: 1.4rem;
+      width: 32px;
+    }
+
+    .about-card p {
+      margin-bottom: 16px;
+      color: #2e2e2e;
+      font-weight: 400;
+    }
+
+    .about-card ul {
+      margin: 12px 0 20px 24px;
+      list-style: none;
+    }
+    .about-card ul li {
+      margin-bottom: 10px;
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+    }
+    .about-card ul li i {
+      color: #1e1e1e;
+      width: 20px;
+      font-size: 0.9rem;
+      opacity: 0.6;
+    }
+
+    .highlight-box {
+      background: #f8f6f3;
+      border-radius: 30px;
+      padding: 24px 30px;
+      margin: 28px 0 10px;
+      border-left: 6px solid #1e1e1e;
+    }
+    .highlight-box i {
+      margin-right: 12px;
+      color: #1e1e1e;
+    }
+
+    .mission-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 24px;
+      margin: 24px 0 10px;
+    }
+    .mission-item {
+      background: #faf9f8;
+      border-radius: 30px;
+      padding: 20px 18px;
+      text-align: center;
+      border: 1px solid #f0efed;
+      transition: 0.2s;
+    }
+    .mission-item:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.03);
+    }
+    .mission-item i {
+      font-size: 2.4rem;
+      margin-bottom: 10px;
+      color: #1e1e1e;
+    }
+    .mission-item h4 {
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+    .mission-item p {
+      font-size: 0.9rem;
+      color: #5a5a5a;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin: 10px 0 40px;
+      font-weight: 600;
+      text-decoration: none;
+      color: #1e1e1e;
+      border: 2px solid #1e1e1e;
+      padding: 12px 28px;
+      border-radius: 60px;
+      transition: 0.2s;
+    }
+    .back-link i {
+      margin-right: 10px;
+    }
+    .back-link:hover {
+      background: #1e1e1e;
+      color: white;
+    }
+
+    /* ---- FOOTER (consistent) ---- */
+    .footer-links {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      padding: 20px 0 30px;
+      border-top: 1px solid #e0ddd8;
+      font-size: 0.9rem;
+      color: #3d3d3d;
+    }
+    .footer-links div {
+      display: flex;
+      gap: 30px;
+    }
+    .footer-links a {
+      text-decoration: none;
+      color: #3d3d3d;
+    }
+    .footer-links a:hover {
+      color: #000;
+      text-decoration: underline;
+    }
+    .footer-copy {
+      text-align: center;
+      padding: 20px 0 10px;
+      color: #888;
+      font-size: 0.8rem;
+    }
+
+    /* responsive */
+    @media (max-width: 700px) {
+      .navbar {
+        flex-direction: column;
+        gap: 16px;
+        align-items: flex-start;
+      }
+      .nav-links {
+        gap: 20px;
+        flex-wrap: wrap;
+      }
+      .about-card {
+        padding: 24px 20px;
+      }
+      .about-header h1 {
+        font-size: 2.2rem;
+      }
+      .footer-links {
+        flex-direction: column;
+        gap: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+
+  <!-- NAVBAR (exactly as home) -->
+  <nav class="navbar">
+    <div class="logo">Aurexon<span>.</span></div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+      <a href="about.html">About Us</a>
+    </div>
+    <div class="nav-actions">
+      <i class="fas fa-search"></i>
+      <i class="fas fa-heart"></i>
+      <i class="fas fa-shopping-bag"></i>
+    </div>
+  </nav>
+
+  <!-- ABOUT PAGE -->
+  <div class="about-header">
+    <h1><i class="fas fa-circle-info"></i> About Aurexon</h1>
+    <p><i class="fas fa-leaf" style="margin-right: 8px;"></i> Designed for the bold. Built for the everyday. Since 2020.</p>
+  </div>
+
+  <div class="about-card">
+    <h2><i class="fas fa-rocket"></i> Our Story</h2>
+    <p>Aurexon was born from a simple idea: create gear that performs as good as it looks. We saw a gap between minimalist design and real-world durability — so we filled it. From backpacks that survive city commutes to sneakers that turn heads, every piece is tested, refined, and crafted with intention.</p>
+
+    <div class="highlight-box">
+      <i class="fas fa-quote-left fa-lg"></i> <strong>“We don’t follow trends — we set the standard for modern essentials.”</strong> — Aurexon team
+    </div>
+
+    <h2><i class="fas fa-bullseye"></i> Mission & Values</h2>
+    <p>Our mission is to empower people to move through life with confidence and style. We believe in:</p>
+    <div class="mission-grid">
+      <div class="mission-item">
+        <i class="fas fa-recycle"></i>
+        <h4>Sustainability</h4>
+        <p>Eco‑conscious materials & packaging.</p>
+      </div>
+      <div class="mission-item">
+        <i class="fas fa-gem"></i>
+        <h4>Quality</h4>
+        <p>Built to last, tested to perform.</p>
+      </div>
+      <div class="mission-item">
+        <i class="fas fa-heart"></i>
+        <h4>Community</h4>
+        <p>We grow with our customers.</p>
+      </div>
+      <div class="mission-item">
+        <i class="fas fa-lightbulb"></i>
+        <h4>Innovation</h4>
+        <p>Always improving, never settling.</p>
+      </div>
+    </div>
+
+    <h2><i class="fas fa-handshake"></i> What Makes Aurexon Different</h2>
+    <ul>
+      <li><i class="fas fa-check-circle"></i> <strong>Direct‑to‑you pricing</strong> — no middlemen, just value.</li>
+      <li><i class="fas fa-check-circle"></i> <strong>365‑day warranty</strong> — we stand behind every stitch.</li>
+      <li><i class="fas fa-check-circle"></i> <strong>Carbon‑neutral shipping</strong> — we offset every order.</li>
+      <li><i class="fas fa-check-circle"></i> <strong>Designed in California</strong> — inspired by the coast, crafted for the world.</li>
+    </ul>
+
+    <h2><i class="fas fa-users"></i> Meet the Team</h2>
+    <p>We’re a small, passionate crew of designers, engineers, and dreamers based in San Francisco. From product development to customer support, we’re here to make sure your Aurexon experience is nothing short of exceptional.</p>
+
+    <div style="display: flex; gap: 20px; flex-wrap: wrap; margin: 16px 0 8px;">
+      <div style="background: #f4f2ef; border-radius: 60px; padding: 8px 20px; display: flex; align-items: center; gap: 10px;">
+        <i class="fas fa-user-circle fa-2x"></i> <span><strong>Alex</strong> · Founder</span>
+      </div>
+      <div style="background: #f4f2ef; border-radius: 60px; padding: 8px 20px; display: flex; align-items: center; gap: 10px;">
+        <i class="fas fa-user-circle fa-2x"></i> <span><strong>Jordan</strong> · Design Lead</span>
+      </div>
+      <div style="background: #f4f2ef; border-radius: 60px; padding: 8px 20px; display: flex; align-items: center; gap: 10px;">
+        <i class="fas fa-user-circle fa-2x"></i> <span><strong>Taylor</strong> · Operations</span>
+      </div>
+      <div style="background: #f4f2ef; border-radius: 60px; padding: 8px 20px; display: flex; align-items: center; gap: 10px;">
+        <i class="fas fa-user-circle fa-2x"></i> <span><strong>Morgan</strong> · Customer Experience</span>
+      </div>
+    </div>
+
+    <h2><i class="fas fa-store"></i> Visit Us</h2>
+    <p>While we’re primarily online, we love meeting our community. Check our <a href="#" style="color: #000; font-weight: 600;">store locator</a> for pop‑up events and flagship openings.</p>
+  </div>
+
+  <!-- back to home -->
+  <a href="#" class="back-link"><i class="fas fa-arrow-left"></i> Back to Aurexon</a>
+
+  <!-- FOOTER -->
+  <div class="footer-links">
+    <div>
+      <a href="#">About</a>
+      <a href="#">Stores</a>
+      <a href="#">Careers</a>
+      <a href="#">Contact</a>
+      <a href="#" style="font-weight: 600;">About</a>
+    </div>
+    <div>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="#"><i class="fab fa-youtube"></i></a>
+    </div>
+  </div>
+  <div class="footer-copy">
+    &copy; 2026 Aurexon — about page, honest and human.
+  </div>
+
+</div> <!-- container -->
+
+</body>
+</html>

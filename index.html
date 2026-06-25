@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aurexon · ecom</title>
+  <!-- Google Font & Font Awesome for icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #faf9f8;
+      color: #1e1e1e;
+      line-height: 1.5;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ---- HEADER / NAV ---- */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 0;
+      border-bottom: 1px solid #eaeaea;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: #0a0a0a;
+    }
+    .logo span {
+      background: #1e1e1e;
+      color: #faf9f8;
+      padding: 0 8px;
+      border-radius: 30px;
+      font-weight: 600;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      font-weight: 500;
+      font-size: 0.95rem;
+    }
+    .nav-links a {
+      text-decoration: none;
+      color: #2b2b2b;
+      transition: 0.2s;
+    }
+    .nav-links a:hover {
+      color: #000;
+      border-bottom: 2px solid #000;
+      padding-bottom: 4px;
+    }
+
+    .nav-actions {
+      display: flex;
+      gap: 20px;
+      font-size: 1.2rem;
+    }
+    .nav-actions i {
+      cursor: pointer;
+      transition: 0.2s;
+    }
+    .nav-actions i:hover {
+      transform: scale(1.08);
+      color: #000;
+    }
+
+    /* ---- HERO ---- */
+    .hero {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+      padding: 50px 0 60px;
+      flex-wrap: wrap;
+    }
+
+    .hero-text {
+      flex: 1 1 380px;
+    }
+    .hero-text h1 {
+      font-size: 3.4rem;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+      margin-bottom: 20px;
+    }
+    .hero-text h1 i {
+      color: #d4a373;
+      font-size: 2.8rem;
+    }
+    .hero-text p {
+      font-size: 1.1rem;
+      color: #4a4a4a;
+      max-width: 450px;
+      margin-bottom: 30px;
+    }
+    .btn-primary {
+      background: #1e1e1e;
+      color: white;
+      border: none;
+      padding: 14px 38px;
+      border-radius: 40px;
+      font-weight: 600;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: 0.2s;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+    .btn-primary:hover {
+      background: #000;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    }
+    .btn-primary i {
+      margin-right: 8px;
+    }
+
+    .hero-image {
+      flex: 1 1 380px;
+      background: #eae6e1;
+      border-radius: 40px;
+      overflow: hidden;
+      min-height: 260px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.04);
+    }
+    .hero-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
+      transition: 0.3s;
+    }
+    .hero-image img:hover {
+      transform: scale(1.02);
+    }
+
+    /* ---- FEATURES BANNER ---- */
+    .features {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      gap: 20px 40px;
+      background: #ffffff;
+      padding: 28px 24px;
+      border-radius: 60px;
+      margin: 20px 0 40px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.02);
+      border: 1px solid #f0efed;
+    }
+    .feature-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 500;
+    }
+    .feature-item i {
+      font-size: 1.6rem;
+      color: #2b2b2b;
+      width: 32px;
+    }
+
+    /* ---- PRODUCT GRID ---- */
+    .section-title {
+      font-size: 2rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      margin: 50px 0 24px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .section-title i {
+      font-size: 1.8rem;
+      opacity: 0.7;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+      gap: 30px 20px;
+      margin-bottom: 50px;
+    }
+
+    .product-card {
+      background: white;
+      border-radius: 30px;
+      padding: 18px 16px 22px;
+      transition: 0.25s ease;
+      border: 1px solid #f0efed;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.01);
+    }
+    .product-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 30px -8px rgba(0,0,0,0.08);
+      border-color: #d0cdc8;
+    }
+
+    .product-img {
+      background: #f4f2ef;
+      border-radius: 24px;
+      overflow: hidden;
+      aspect-ratio: 1 / 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 14px;
+    }
+    .product-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: 0.3s;
+    }
+    .product-img img:hover {
+      transform: scale(1.03);
+    }
+
+    .product-info {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .product-info h4 {
+      font-weight: 600;
+      font-size: 1rem;
+    }
+    .product-info p {
+      font-weight: 700;
+      color: #1e1e1e;
+    }
+    .product-rating {
+      color: #f5b342;
+      letter-spacing: 2px;
+      font-size: 0.8rem;
+      margin-top: 6px;
+    }
+
+    .badge {
+      background: #1e1e1e;
+      color: white;
+      font-size: 0.7rem;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 30px;
+      display: inline-block;
+    }
+
+    /* ---- NEWSLETTER / FOOTER PREVIEW ---- */
+    .newsletter {
+      background: #1e1e1e;
+      color: #faf9f8;
+      border-radius: 60px;
+      padding: 50px 40px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      margin: 60px 0 30px;
+    }
+    .newsletter h2 {
+      font-weight: 600;
+      font-size: 1.8rem;
+    }
+    .newsletter h2 i {
+      color: #d4a373;
+      margin-right: 8px;
+    }
+    .newsletter p {
+      opacity: 0.7;
+      max-width: 300px;
+    }
+    .newsletter-input {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .newsletter-input input {
+      padding: 14px 20px;
+      border-radius: 60px;
+      border: none;
+      min-width: 220px;
+      font-size: 1rem;
+    }
+    .newsletter-input button {
+      background: white;
+      color: #1e1e1e;
+      border: none;
+      padding: 14px 30px;
+      border-radius: 60px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+    .newsletter-input button:hover {
+      background: #d4a373;
+      color: #1e1e1e;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      padding: 20px 0 30px;
+      border-top: 1px solid #e0ddd8;
+      font-size: 0.9rem;
+      color: #3d3d3d;
+    }
+    .footer-links div {
+      display: flex;
+      gap: 30px;
+    }
+    .footer-links a {
+      text-decoration: none;
+      color: #3d3d3d;
+    }
+    .footer-links a:hover {
+      color: #000;
+      text-decoration: underline;
+    }
+    .footer-copy {
+      text-align: center;
+      padding: 20px 0 10px;
+      color: #888;
+      font-size: 0.8rem;
+    }
+
+    /* responsive */
+    @media (max-width: 700px) {
+      .navbar {
+        flex-direction: column;
+        gap: 16px;
+        align-items: flex-start;
+      }
+      .nav-links {
+        gap: 20px;
+        flex-wrap: wrap;
+      }
+      .hero-text h1 {
+        font-size: 2.6rem;
+      }
+      .newsletter {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+      }
+      .newsletter-input input {
+        min-width: 160px;
+      }
+      .features {
+        border-radius: 30px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+      }
+    }
+  </style>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-NTV0NLN2X5"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'G-NTV0NLN2X5');
+</script>
+
+
+</head>
+<body>
+
+<div class="container">
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="logo">Aurexon<span>.</span></div>
+    <div class="nav-links">
+     <a href="index.html">Home</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+      <a href="about.html">About Us</a>
+    </div>
+    <div class="nav-actions">
+      <i class="fas fa-search"></i>
+      <i class="fas fa-heart"></i>
+      <i class="fas fa-shopping-bag"></i>
+    </div>
+  </nav>
+
+  <!-- HERO SECTION with working image -->
+  <section class="hero">
+    <div class="hero-text">
+      <h1>Elevate your <br>everyday <i class="fas fa-bolt"></i></h1>
+      <p>Discover the new Aurexon collection — minimalist, durable, and made for the modern move.</p>
+      <button class="btn-primary"><i class="fas fa-arrow-right"></i> Shop now</button>
+    </div>
+    <div class="hero-image">
+      <!-- working image (unsplash) -->
+      <img src="https://images.unsplash.com/photo-1556905055-8f358a7a47b2?w=600&h=400&fit=crop&crop=center&auto=format" alt="Aurexon hero collection">
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <div class="features">
+    <div class="feature-item"><i class="fas fa-truck"></i> Free shipping</div>
+    <div class="feature-item"><i class="fas fa-rotate-left"></i> 30-day returns</div>
+    <div class="feature-item"><i class="fas fa-lock"></i> Secure payment</div>
+    <div class="feature-item"><i class="fas fa-leaf"></i> Eco-friendly</div>
+  </div>
+
+  <!-- PRODUCT GRID -->
+  <div class="section-title">
+    <i class="fas fa-fire"></i> Bestsellers
+  </div>
+
+  <div class="product-grid">
+    <!-- product 1 -->
+    <div class="product-card">
+      <div class="product-img">
+        <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=400&h=400&fit=crop&crop=center&auto=format" alt="Aurexon sneakers">
+      </div>
+      <div class="product-info">
+        <h4>Aurexon Racer</h4>
+        <p>$89</p>
+      </div>
+      <div class="product-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i> 4.8</div>
+    </div>
+    <!-- product 2 -->
+    <div class="product-card">
+      <div class="product-img">
+        <img src="https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?w=400&h=400&fit=crop&crop=center&auto=format" alt="Aurexon backpack">
+      </div>
+      <div class="product-info">
+        <h4>Daypack Pro</h4>
+        <p>$129</p>
+      </div>
+      <div class="product-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> 5.0</div>
+    </div>
+    <!-- product 3 -->
+    <div class="product-card">
+      <div class="product-img">
+        <img src="https://images.unsplash.com/photo-1600086827879-a655c6d9f2e6?w=400&h=400&fit=crop&crop=center&auto=format" alt="Aurexon cap">
+      </div>
+      <div class="product-info">
+        <h4>Essential Cap</h4>
+        <p>$34</p>
+      </div>
+      <div class="product-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> 5.0</div>
+    </div>
+    <!-- product 4 -->
+    <div class="product-card">
+      <div class="product-img">
+        <img src="https://images.unsplash.com/photo-1560343090-f0409e92791a?w=400&h=400&fit=crop&crop=center&auto=format" alt="Aurexon watch">
+      </div>
+      <div class="product-info">
+        <h4>Chrono M</h4>
+        <p>$219</p>
+      </div>
+      <div class="product-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i> 4.9</div>
+    </div>
+    <!-- product 5 -->
+    <div class="product-card">
+      <div class="product-img">
+        <img src="https://images.unsplash.com/photo-1598532163257-ae0c6f0b0fa0?w=400&h=400&fit=crop&crop=center&auto=format" alt="Aurexon hoodie">
+      </div>
+      <div class="product-info">
+        <h4>Tech Hoodie</h4>
+        <p>$79</p>
+      </div>
+      <div class="product-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> 4.9</div>
+    </div>
+    <!-- product 6 -->
+    <div class="product-card">
+      <div class="product-img">
+        <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400&h=400&fit=crop&crop=center&auto=format" alt="Aurexon watch">
+      </div>
+      <div class="product-info">
+        <h4>Minimal Wallet</h4>
+        <p>$49</p>
+      </div>
+      <div class="product-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i> 4.7</div>
+    </div>
+  </div>
+
+  <!-- NEWSLETTER / CTA -->
+  <div class="newsletter">
+    <div>
+      <h2><i class="fas fa-envelope"></i> Aurexon drop</h2>
+      <p>Subscribe for early access, drops & 10% off your first order.</p>
+    </div>
+    <div class="newsletter-input">
+      <input type="email" placeholder="Your email">
+      <button>Subscribe</button>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer-links">
+    <div>
+      <a href="#">About</a>
+      <a href="#">Stores</a>
+      <a href="#">Careers</a>
+      <a href="#">Contact</a>
+    </div>
+    <div>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="#"><i class="fab fa-youtube"></i></a>
+    </div>
+  </div>
+  <div class="footer-copy">
+    &copy; 2026 Aurexon — all images from Unsplash, fully working.
+  </div>
+
+</div> <!-- container -->
+
+</body>
+</html>
